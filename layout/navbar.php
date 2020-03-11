@@ -81,7 +81,7 @@
 	   	</li>
 
     	<li class="nav-item">
-			<a href="#" class="nav-link">SIGN UP</a>   		
+			<a href="create_user.php" class="nav-link">SIGN UP</a>   		
 	   	</li>
 
 	   	<li class="nav-item d-sm-none d-md-block">
