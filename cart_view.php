@@ -28,8 +28,6 @@
 	{
 
 		$id = $_POST['product_id'];
-
-		echo $id;
 	
 		$delete = $cart->deleteSingle($id);
 		header('Location:cart_view.php');

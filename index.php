@@ -19,7 +19,7 @@
  		<?php foreach ($data as $product) { ?>
 
  			<div class="card col-md-3 m-2">
- 				<img src="images/<?php echo $product->image1 ?>" class="pt-2 card-img" alt="" width="500px">
+ 				<img src="images/<?php echo $product->image1 ?>" class="pt-2 card-img" alt="" width="500px" height="250px">
 
  				<div class="card-body">
 

@@ -11,7 +11,7 @@
 			$con = $pdo->connect();
 		}
 
-		public function insertProduct($title,$price,$stock,$location,$category_id,$img1,$img2,$img3)
+		public function insertProduct($title,$price,$stock,$location,$category_id,$img1,$img2,$img3,$description)
 		{
 
 			$pdo = new Database;
@@ -19,7 +19,7 @@
 
 			try {
 
-			$sql = "INSERT INTO products(title,price,stock,location,category_id,image1,image2,image3)VALUES(:title,:price,:stock,:location,:category_id,:image1,:image2,:image3)";
+			$sql = "INSERT INTO products(title,price,stock,location,category_id,image1,image2,image3,description)VALUES(:title,:price,:stock,:location,:category_id,:image1,:image2,:image3,:description)";
 			$stmt = $con->prepare($sql);
 			$stmt->execute([
 				
@@ -30,7 +30,8 @@
 							'category_id'=>$category_id,
 							'image1'=>$img1,
 							'image2'=>$img2,
-							'image3'=>$img3
+							'image3'=>$img3,
+							'description'=>$description
 
 					]);
 			echo "Product Added";

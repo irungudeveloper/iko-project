@@ -23,6 +23,7 @@
 					<th scope="col">Price</th>
 					<th scope="col">Stock</th>
 					<th scope="col">Location</th>
+					<th scope="col">Description</th>
 					<th scope="col"></th>
 					<th scope="col"></th>
 				</thead>
@@ -39,6 +40,7 @@
 					<td><?php echo $product->price ?></td>
 					<td><?php echo $product->stock ?></td>
 					<td><?php echo $product->location ?></td>
+					<td><?php echo $product->description ?></td>
 					<td>
 						<form method="GET" action="product_edit.php">
 							<input type="hidden" name="id" value="<?php echo $product->id?>">

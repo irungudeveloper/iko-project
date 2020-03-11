@@ -53,7 +53,7 @@
     <ul class="navbar-nav ml-auto">
 
     	<li class="nav-item">
-			<a href="#" class="nav-link">Cart</a>   		
+			<a href="cart_view.php" class="nav-link">Cart</a>   		
 	   	</li>
 
     	<li class="nav-item">

@@ -17,6 +17,7 @@
 		$stock = $_POST['stock'];
 		$location = $_POST['location'];
 		$cat_id = $_POST['cat_id'];
+		$description = $_POST['description'];
 
 		$img1 = $_FILES["image1"]["name"];
 		$img2 = $_FILES["image2"]["name"];
@@ -30,7 +31,7 @@
 		move_uploaded_file($_FILES["image2"]["tmp_name"], $target_dir.$img2);
 		move_uploaded_file($_FILES["image3"]["tmp_name"], $target_dir.$img3);
 		
-		$product->insertProduct($title,$price,$stock,$location,$cat_id,$img1,$img2,$img3);
+		$product->insertProduct($title,$price,$stock,$location,$cat_id,$img1,$img2,$img3,$description);
 
 		header('Location:index.php');
 
@@ -126,6 +127,17 @@
  					
  				</div>
 
+ 			</div>
+
+ 			<div class="form-row">
+
+ 				<div class="form-group">
+
+			    <label for="exampleFormControlTextarea1">Product Description</label>
+		   		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="150" name="description"></textarea>
+
+			 </div>
+ 				
  			</div>
 
 			<div class="form-row">

@@ -40,13 +40,33 @@
 
 					<div class="row no-gutters">
 						
-						<div class="col-md-5">
+						<div class="col-md-4">
 							
-							<img src="images/<?php echo $product->image1?>" class="card-img">
+							<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+							  <div class="carousel-inner">
+							    <div class="carousel-item active">
+							      <img src="images/<?php echo $product->image1 ?>" class="d-block w-100" alt="..." height="500px" width="600px">
+							    </div>
+							    <div class="carousel-item">
+							      <img src="images/<?php echo $product->image2 ?>" class="d-block w-100" alt="..." height="500px" width="600px">
+							    </div>
+							    <div class="carousel-item">
+							      <img src="images/<?php echo $product->image3 ?>" class="d-block w-100" alt="..." height="500px" width="600px">
+							    </div>
+							  </div>
+							  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							    <span class="sr-only">Previous</span>
+							  </a>
+							  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							    <span class="sr-only">Next</span>
+							  </a>
+							</div>
 
 						</div>
 
-						<div class="col-md-7">
+						<div class="col-md-8">
 
 							<div class="card-body">
 								
