@@ -1,3 +1,12 @@
+<style type="text/css">
+	
+	.no-data
+	{
+		background-color: tomato;
+	}
+
+</style>
+
 <?php 
 
 	require_once('config/cart_class.php');
@@ -42,12 +51,16 @@
 
  	<div class="col-md-9 col-sm-12 m-2">
 
+
+ 		<p class="display-5 font-weight-bold">Your Cart</p>
+
  		<div class="row">
 
  			<table class="table">
  			
  			<thead class="thead-light">
  				<th scope="col">Title</th>
+ 				<th scope="col">Image</th>
  				<th scope="col">Amount</th>
  				<th scope="col">Price</th>
  				<th scope="col">Subtotal</th>
@@ -56,10 +69,18 @@
 
  			<tbody>
 
- 				<?php foreach ($data as $cart) { ?>
+ 				<?php 
+
+ 				if ($data !=null) 
+					{
+
+ 				foreach ($data as $cart) { ?>
  				
  				<tr>
  					<td><?php echo $cart->title ?></td>
+ 					<td>
+ 						<img src="images/<?php echo $cart->image ?>" width="50px" height="50px">
+ 					</td>
  					<td><?php echo $cart->amount ?></td>
  					<td><?php echo $cart->price ?></td>
 
@@ -85,6 +106,10 @@
 
  					</td>
  				</tr>
+
+ 			<?php } } else{ ?>
+
+ 					<td colspan="6" class="text-center text-white bg-danger" >No Items In Your Cart</td>
 
  			<?php } ?>
 

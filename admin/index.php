@@ -11,10 +11,18 @@
  	<?php require_once('layout/sidebar.php') ?>
 
 
- 	<div class="col-md-9 col-sm-12">
+ 	<div class="col-md-9 col-sm-12 m-2">
 
- 		<div class="row">
+ 		<div class="row justify-content-end">
+ 			<form class="form-inline float-right">
+		      <input class="form-control pl-5 pr-5" type="search" placeholder="Search" aria-label="Search">
+		      <button class="btn btn-success my-2 my-sm-0 ml-md-3" type="submit">Search</button>
+		    </form>
 
+ 		</div>
+
+ 		<div class="row justify-content-center">
+ 			
  			<table class="table table-striped">
 			
 				<thead class="thead-light">

@@ -45,7 +45,11 @@
 
  	<div class="col-md-9 col-sm-12">
 
- 		<p class="display-5 btn btn-primary disabled"><span><b>+</b></span> New Product</p>
+ 		
+
+ 		<div class="row justify-content-end">
+ 			<p class="display-5 text-primary pt-4"><span><b>+</b></span> New Product</p>
+ 		</div>
  			
  		<form action="product_insert.php" method="post" enctype="multipart/form-data">
 
