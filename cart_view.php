@@ -54,7 +54,7 @@
  				<th scope="col"></th>
  			</thead>
 
- 			<tbody char="table-striped">
+ 			<tbody>
 
  				<?php foreach ($data as $cart) { ?>
  				

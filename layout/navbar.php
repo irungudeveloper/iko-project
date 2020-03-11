@@ -1,3 +1,27 @@
+<style type="text/css">
+  
+  nav
+  {
+    background-color: #E0EEEE !important;
+  }
+
+  a
+  {
+    font-size: 18px;
+  }
+
+  a:hover
+  {
+    color: tomato !important;
+  }
+
+  form
+  {
+    margin-top: 10px;
+  }
+
+</style>
+
 <?php require_once('header.php') ?>
 
 <?php 
@@ -13,7 +37,7 @@
 
 	<div class="col-12 m-0 p-0">
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light pb-md-3 pt-md-3">
+		<nav class="navbar navbar-expand-lg navbar-light pb-md-3 pt-md-3">
   <a class="navbar-brand" href="#">
   		
   		<img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
@@ -53,7 +77,7 @@
     <ul class="navbar-nav ml-auto">
 
     	<li class="nav-item">
-			<a href="cart_view.php" class="nav-link">Cart</a>   		
+			<a href="cart_view.php" class="nav-link mr-3"><i class="fas fa-shopping-cart"></i> Cart</a>   		
 	   	</li>
 
     	<li class="nav-item">
