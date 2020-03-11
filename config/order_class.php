@@ -181,6 +181,27 @@
 			}
 
 		}
+
+		public function pendingCount()
+		{
+			$pdo = new Database;
+			$con = $pdo->connect();
+
+			$sql = "SELECT COUNT(id) FROM orders WHERE status = 0";
+
+			try 
+			{
+
+				$stmt = $con->prepare($sql);
+				$data = $stmt->execute();
+
+				return $data;
+				
+			} catch (Exception $e) 
+			{
+				return false;
+			}
+		}
 		
 	}
 

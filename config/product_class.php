@@ -160,6 +160,31 @@
 			}
 
 		}
+
+		public function productCount()
+		{
+
+			$pdo = new Database;
+			$con = $pdo->connect();
+
+			$sql = "SELECT COUNT(title) FROM products";
+
+			try 
+			{
+				$stmt = $con->prepare($sql);
+				$data = $stmt->execute();
+
+				return $data;	
+				
+			} 
+			catch (Exception $e) 
+			{
+				
+				return false;
+
+			}
+
+		}
 		
 	}
 
