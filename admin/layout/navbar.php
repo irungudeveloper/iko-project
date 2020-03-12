@@ -45,7 +45,7 @@
     <ul class="navbar-nav ml-auto">
       
       <li class="nav-item active mr-md-4">
-        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Profile</a>
+        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> <?php var_dump($_SESSION['name']) ?></a>
       </li>
 
     </ul>

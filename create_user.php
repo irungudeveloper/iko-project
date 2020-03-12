@@ -6,7 +6,7 @@
 
 	$user_type = $user->getUserType();
 
-	$target_dir = "images/";
+	$target_dir = "admin/images/";
 
 	if (isset($_POST['submit'])) 
 	{
@@ -14,21 +14,22 @@
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
 		$email = $_POST['email'];
-		$type = $_POST['type'];
-		$date = $_POST['date'];
+		$type = $_POST['type_id'];
+		$date = date("Y-m-d");
 
-		$image = $_FILES["image"]["name"];
-		$target_file = $target_dir.basename($_FILES["image"]["name"]);
+		$img1 = $_FILES["image1"]["name"];
+		$target_file_1 = $target_dir.basename($_FILES["image1"]["name"]);
 
-		move_uploaded_file($_FILES["image"]["name"], $target_dir.$image);
+		move_uploaded_file($_FILES["image1"]["tmp_name"], $target_dir.$img1);
 
 		$password = $_POST['password'];
 		$hash = password_hash($password, PASSWORD_DEFAULT);		
 
 		try 
 		{
-			$user->createUser($fname,$lname,$image,$email,$hash,$type,$date);
-			return true;	
+			$user->createUser($fname,$lname,$img1,$email,$hash,$type,$date);
+			
+			header('Location : index.php');	
 		} 
 		catch (Exception $e) 
 		{
@@ -94,7 +95,7 @@
  				
  				<div class="form-group col-md-12">
  					
- 					<input class="form-control" type="file" name="image">
+ 					<input class="form-control" type="file" name="image1">
 
  				</div>
 
@@ -107,9 +108,9 @@
  					<label for="category">User Role</label>
  					<select name="type_id" id="category" class="form-control">
 
-					<?php foreach ($data as $category) { ?>
+					<?php foreach ($user_type as $type) { ?>
 					
-						<option value="<?php echo $user_type->id ?>"><?php echo $user_type->role ?></option>
+						<option value="<?php echo $type->id ?>"><?php echo $type->role ?></option>
 
 					<?php } ?>
 					

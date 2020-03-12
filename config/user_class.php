@@ -76,22 +76,76 @@
 
 		public function getUserType()
 		{
-			$con = $this->con;
 
-			$sql = "SELECT * FROM usertype";
+			$sql = "SELECT * FROM user_type";
 
 			try 
 			{
+
+				$con = $this->con;
+
 				$stmt = $con->prepare($sql);
 				$stmt->execute();
 
 				$data = $stmt->fetchAll();
-				return $data;	
+
+				return $data;
+				
 			} 
 			catch (Exception $e) 
 			{
+
 				return false;
+				
 			}
+
+		}
+
+		public function getUserInfo($email)
+		{
+			$sql = "SELECT * FROM users WHERE email = :email";
+
+			try 
+			{
+				$con = $this->con;
+				
+				$stmt = $con->prepare($sql);
+				$stmt->execute([
+
+						'email' => $email
+
+					]);
+
+				$data = $stmt->fetchAll();
+				return $data;
+
+			} 
+			catch (Exception $e) 
+			{
+				$data = "Email Not Found";
+				return $data;
+			}
+		}
+
+		public function userLogin($email,$password)
+		{
+
+			$data = $this->getUserInfo($email);
+
+			foreach ($data as $dbvalue) 
+			{
+			
+				if(password_verify($password, $dbvalue->password))
+				{
+					return $dbvalue->email;
+				}else
+				{
+					$response = "Incorrect Password";
+					return $response;
+				}
+
+			}
+
 		}
 
 	}
