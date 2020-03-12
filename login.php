@@ -15,14 +15,27 @@
 			
 			$response = $login->userLogin($email,$password);
 
-			var_dump($response);
+			$type = $login->getUserInfo($response);
 
-		} 
+			foreach ($type as $user_info) 
+			{
+		
+				if ($user_info->type_id == 1) 
+				{
+					header('Location:admin/dashboard.php');
+				}else
+				{
+					header('Location:index.php');
+				}
+
+			} 
+		}
 		catch (Exception $e) 
 		{
 			echo "ERRORRRRRRRRRRRRR";	
 		}
 	}
+
 
  ?>
 
@@ -36,7 +49,7 @@
  		<p class="text-center pt-3 text-danger">* Log In Details</p>
  		<div class="row justify-content-center">
  			
- 			<form action="session.php" method="post" class="bg-light p-4">
+ 			<form action="login.php" method="post" class="bg-light p-4">
 
  			<div class="form-row">
  				

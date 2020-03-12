@@ -1,3 +1,13 @@
+
+<style>
+	
+	.card-height
+	{
+		height: 155px !important;
+	}
+
+</style>
+
 <?php 
 	
 	require_once('../config/product_class.php');
@@ -16,9 +26,9 @@
 
 	<div class="col-md-10 col-sm-12">
 
-			<div class="row justify-content-center">
+			<div class="row">
 
-				<div class="card col-md-3 bg-primary m-2">
+				<div class="card col-md-3 bg-primary m-2 card-height">
 					<div class="card-body">
 						<h5 class="text-white font-weight-bold ">Products In Stock</h5>
 						<p class="text-white float-right display-4"><?php echo $product_count ?></p>
@@ -28,7 +38,7 @@
 					
 				</div>
 
-				<div class="card col-md-3 bg-warning m-2 ml-5">
+				<div class="card col-md-3 bg-warning m-2 ml-5 card-height">
 					<div class="card-body">
 						<h5 class="text-white font-weight-bold">Pending Orders</h5>
 						<p class="text-white float-right display-4"><?php echo $order_count ?></p>
@@ -38,7 +48,7 @@
 
 				</div>
 
-				<div class="card col-md-3 bg-success m-2 ml-5">
+				<div class="card col-md-3 bg-success m-2 ml-5 card-height">
 					<div class="card-body">
 						<h5 class="text-white">Total Sales</h5>
 						<p></p>

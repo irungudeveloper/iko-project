@@ -5,42 +5,41 @@
 	session_start();
 	$_SESSION['name'] = null;
 
+	// $login = new User;
 
-	$login = new User;
+	// if (isset($_POST['submit'])) 
+	// {
+	// 	$email = $_POST['email'];
+	// 	$password = $_POST['password'];
 
-	if (isset($_POST['submit'])) 
-	{
-		$email = $_POST['email'];
-		$password = $_POST['password'];
-
-		try 
-		{
+	// 	try 
+	// 	{
 			
-			$response = $login->userLogin($email,$password);
+	// 		$response = $login->userLogin($email,$password);
 
-			$type = $login->getUserInfo($response);
+	// 		// $type = $login->getUserInfo($response);
 
-			foreach ($type as $user_info) 
-			{
-				$_SESSION['name'] = $user_info->fname;
+	// 		// foreach ($type as $user_info) 
+	// 		// {
+	// 		// 	$_SESSION['name'] = $user_info->fname;
 
-				if ($user_info->type_id == 1) 
-				{
+	// 		// 	if ($user_info->type_id == 1) 
+	// 		// 	{
 
-					header('Location:admin/dashboard.php');
-				}else
-				{
-					header('Location:index.php');
-				}
-			}
+	// 		// 		header('Location:admin/dashboard.php');
+	// 		// 	}else
+	// 		// 	{
+	// 		// 		header('Location:index.php');
+	// 		// 	}
+	// 		}
 
-		} 
-		catch (Exception $e) 
-		{
-			return false;	
-		}
-	}
+	// 	} 
+	// 	catch (Exception $e) 
+	// 	{
+	// 		return false;	
+	// 	}
+	// }
 
-	var_dump($_SESSION['name']);
+	// var_dump($_SESSION['name']);
 
  ?>
