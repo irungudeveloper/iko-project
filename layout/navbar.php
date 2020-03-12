@@ -80,17 +80,25 @@
 			<a href="cart_view.php" class="nav-link mr-3"><i class="fas fa-shopping-cart"></i> Cart</a>   		
 	   	</li>
 
-    	<li class="nav-item">
-			<a href="create_user.php" class="nav-link">SIGN UP</a>   		
-	   	</li>
+       <?php if (!isset($_SESSION['u_id'])) { ?>
+           <li class="nav-item">
+              <a href="create_user.php" class="nav-link">SIGN UP</a>      
+            </li>
 
-	   	<li class="nav-item d-sm-none d-md-block">
-	   		<a href="#" class="nav-link">|</a>
-	   	</li>
-	   		
-	   	<li class="nav-item">
-	   		<a href="login.php" class="nav-link">LOG IN</a>
-	   	</li>
+            <li class="nav-item d-sm-none d-md-block">
+               <a href="#" class="nav-link">|</a>
+            </li>
+              
+            <li class="nav-item">
+               <a href="login_form.php" class="nav-link">LOG IN</a>
+            </li>
+       <?php } else { ?>
+               <li class="nav-item active mr-md-4">
+                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> LOG OUT</a>
+              </li>
+      <?php } ?>
+
+    	
 
     </ul>
 

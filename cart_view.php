@@ -49,7 +49,7 @@
  	<?php require_once('layout/navbar.php') ?>
  	<?php require_once('layout/sidebar.php') ?>
 
- 	<div class="col-md-9 col-sm-12 m-2">
+ 	<div class="col-md-9 col-sm-12 m-2 p-0 m-0">
 
 
  		<p class="display-5 font-weight-bold">Your Cart</p>
@@ -113,6 +113,14 @@
 
  			<?php } ?>
 
+ 			<?php if (!isset($_SESSION['name'] ))  { ?>
+ 				
+ 				<tr>
+ 					<td>You Need To Sign In To Checkout</td>
+ 				</tr>
+
+ 			<?php }else{ ?>
+
  				<tr>
  					<td colspan="4">
  						<p>
@@ -131,6 +139,8 @@
  					</td>
 
  				</tr>
+
+ 				<?php } ?>
 
  			</tbody>
 

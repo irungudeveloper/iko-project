@@ -7,7 +7,11 @@
 
 </style>
 
-<?php require_once('../session.php') ?>
+<?php 
+
+	session_start();
+
+?>
 
 <!DOCTYPE html>
 <html>

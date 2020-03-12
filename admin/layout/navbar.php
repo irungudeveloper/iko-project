@@ -16,6 +16,14 @@
     color: tomato !important;
   }
 
+  .profile
+  {
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      padding-right: 3px;
+  }
+
 </style>
 
 <?php require_once('header.php') ?>
@@ -45,7 +53,7 @@
     <ul class="navbar-nav ml-auto">
       
       <li class="nav-item active mr-md-4">
-        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> First Name</a>
+        <a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i> LOG OUT</a>
       </li>
 
     </ul>
