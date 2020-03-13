@@ -1,9 +1,16 @@
-<?php 
+ 	<?php require_once('layout/navbar.php') ?>
+
+ 	<?php require_once('layout/sidebar.php') ?>
+
+ 	<?php 
 
 	require_once('../config/order_class.php');
 
+	$u_id = $_SESSION['u_id'];
+
 	$order = new Order;
-	$data = $order->displayOrder();
+	$data = $order->displayOrder($u_id);
+
 
 	if (isset($_POST['delivered'])) 
 	{
@@ -16,11 +23,8 @@
 
 	}
 
- ?>
+	 ?>
 
- 	<?php require_once('layout/navbar.php') ?>
-
- 	<?php require_once('layout/sidebar.php') ?>
 
  	<div class="col-md-9 col-sm-12">
 

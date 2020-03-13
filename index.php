@@ -3,7 +3,7 @@
 	require_once('config/product_class.php');
 
 	$product = new Product;
-	$data = $product->displayProduct();
+	$data = $product->displayAllProduct();
 
  ?>
 

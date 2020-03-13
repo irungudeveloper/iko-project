@@ -22,7 +22,7 @@
 				$stmt->execute();
 				$data = $stmt->fetchAll();
 
-				$order_sql = "INSERT INTO orders (title,price,total,amount) VALUES (:title,:price,:total,:amount)";
+				$order_sql = "INSERT INTO orders (title,price,total,amount,user_id) VALUES (:title,:price,:total,:amount,:u_id)";
 
 				foreach ($data as $order) 
 				{
@@ -31,9 +31,8 @@
 					$price =  $order->price;
 					$total = ($order->amount)*($order->price);
 					$amount = $order->amount;
+					$u_id = $order->user_id;
 
-
-				
 					try 
 					{
 
@@ -44,7 +43,8 @@
 							'title' => $title,
 							'price' => $price,
 							'total' => $total,
-							'amount' => $amount
+							'amount' => $amount,
+							'u_id' => $u_id
 
 						]);
 						
@@ -70,7 +70,7 @@
 
 		}
 
-		public function displayOrder()
+		public function displayOrder($id)
 		{
 
 			$pdo = new Database;
@@ -79,9 +79,13 @@
 			try 
 			{
 
-				$sql = "SELECT * FROM orders";
+				$sql = "SELECT * FROM orders WHERE user_id = :id";
 				$stmt = $con->prepare($sql);
-				$stmt->execute();
+				$stmt->execute([
+
+							'id'=>$id
+							
+						]);
 				$data = $stmt->fetchAll();
 
 				return $data;

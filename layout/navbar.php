@@ -80,6 +80,16 @@
 			<a href="cart_view.php" class="nav-link mr-3"><i class="fas fa-shopping-cart"></i> Cart</a>   		
 	   	</li>
 
+      <?php if (isset($_SESSION['type_id'] )) {
+
+        if ($_SESSION['type_id'] == 1) { ?>
+     
+        <li class="nav-item">
+              <a href="admin/dashboard.php" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>      
+            </li>
+
+    <?php } } ?>
+
        <?php if (!isset($_SESSION['u_id'])) { ?>
            <li class="nav-item">
               <a href="create_user.php" class="nav-link">SIGN UP</a>      

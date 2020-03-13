@@ -34,6 +34,7 @@
 				<input type="hidden" name="price" value="<?php echo $product->price ?>">
 
 				<input type="hidden" name="id" value="<?php echo $product->id ?>">
+				<input type="hidden" name="u_id" value="<?php echo $product->user_id ?>">
 
 
 				<div class="card">

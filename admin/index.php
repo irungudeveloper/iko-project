@@ -1,15 +1,18 @@
-<?php 
-	
-	require_once('../config/product_class.php');
-	$product = new Product;
-	$data = $product->displayProduct();
-	
-
- ?>
 
  	<?php require_once('layout/navbar.php') ?>
 
  	<?php require_once('layout/sidebar.php') ?>
+
+ 	<?php 
+	
+	require_once('../config/product_class.php');
+
+	$id = $_SESSION['u_id'];
+
+	$product = new Product;
+	$data = $product->displayProduct($id);
+	
+ ?>
 
 
  	<div class="col-md-9 col-sm-12 m-2">

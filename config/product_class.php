@@ -11,7 +11,7 @@
 			$con = $pdo->connect();
 		}
 
-		public function insertProduct($title,$price,$stock,$location,$category_id,$img1,$img2,$img3,$description)
+		public function insertProduct($title,$price,$stock,$location,$category_id,$img1,$img2,$img3,$description,$u_id)
 		{
 
 			$pdo = new Database;
@@ -19,7 +19,7 @@
 
 			try {
 
-			$sql = "INSERT INTO products(title,price,stock,location,category_id,image1,image2,image3,description)VALUES(:title,:price,:stock,:location,:category_id,:image1,:image2,:image3,:description)";
+			$sql = "INSERT INTO products(title,price,stock,location,category_id,image1,image2,image3,description,user_id)VALUES(:title,:price,:stock,:location,:category_id,:image1,:image2,:image3,:description,:u_id)";
 			$stmt = $con->prepare($sql);
 			$stmt->execute([
 				
@@ -31,7 +31,8 @@
 							'image1'=>$img1,
 							'image2'=>$img2,
 							'image3'=>$img3,
-							'description'=>$description
+							'description'=>$description,
+							'u_id'=>$u_id
 
 					]);
 			echo "Product Added";
@@ -44,7 +45,26 @@
 
 		}
 
-		public function displayProduct(){
+		public function displayProduct($id)
+		{
+		
+			$pdo = new Database;
+			$con = $pdo->connect();
+			$sql = "SELECT * FROM products WHERE user_id = :id";
+			$stmt = $con->prepare($sql);
+			$stmt->execute([
+
+						'id' => $id
+
+					]);
+			$products = $stmt->fetchAll();
+			
+			return $products;
+
+		}
+
+		public function displayAllProduct()
+		{
 		
 			$pdo = new Database;
 			$con = $pdo->connect();

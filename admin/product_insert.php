@@ -1,4 +1,8 @@
-<?php 
+ 	<?php require_once('layout/navbar.php') ?>
+
+ 	<?php require_once('layout/sidebar.php') ?>
+
+ 	<?php 
 	
 	require_once('../config/product_class.php');
 	require_once ('../config/category_class.php');
@@ -18,6 +22,7 @@
 		$location = $_POST['location'];
 		$cat_id = $_POST['cat_id'];
 		$description = $_POST['description'];
+		$u_id = $_SESSION['u_id'];
 
 		$img1 = $_FILES["image1"]["name"];
 		$img2 = $_FILES["image2"]["name"];
@@ -31,17 +36,13 @@
 		move_uploaded_file($_FILES["image2"]["tmp_name"], $target_dir.$img2);
 		move_uploaded_file($_FILES["image3"]["tmp_name"], $target_dir.$img3);
 		
-		$product->insertProduct($title,$price,$stock,$location,$cat_id,$img1,$img2,$img3,$description);
+		$product->insertProduct($title,$price,$stock,$location,$cat_id,$img1,$img2,$img3,$description,$u_id);
 
 		header('Location:index.php');
 
 	}	
 
  ?>
-
- 	<?php require_once('layout/navbar.php') ?>
-
- 	<?php require_once('layout/sidebar.php') ?>
 
  	<div class="col-md-9 col-sm-12">
 
