@@ -17,19 +17,22 @@
 	
 	require_once('../config/product_class.php');
 	require_once('../config/order_class.php');
+	require_once('../config/user_class.php');
 
 	$product_data = new Product;
 	$order_data = new Order;
+	$user_data = new User;
 	$u_id = $_SESSION['u_id'];
 
 	$product_count = $product_data->productCount($u_id);
 	$order_count = $order_data->pendingCount();
+	$user_profile = $user_data->displayUser($u_id);
 
  ?>
 
 	<div class="col-md-10 col-sm-12">
 
-			<div class="row">
+			<div class="row p-3">
 
 				<div class="card col-md-3 bg-primary m-2 card-height">
 					<div class="card-body">
@@ -80,11 +83,11 @@
 				
 			</div>
 
-		<div class="row mt-2">
+		<div class="row p-3">
 
 			<div class="col-md-6 p-0">
 				
-				<div class="card ml-3">
+				<div class="card">
 
 					<p class="display-5 text-center pt-3">Sales Graph</p>
 
@@ -137,10 +140,26 @@
 				
 			</div>
 
-			<div class="col-md-5 align-self-end p-0">
+			<div class="col-md-5 bg-white">
 				
-				<div class="card bg-success">
-					frtmbvrltkbm
+				<div class="row p-3">
+					
+					<?php foreach ($user_profile as $profile) { ?>
+						
+						<div class="col-md-12">
+
+							<div class="row justify-content-center">
+								<img src="images/<?php echo $profile->image ?>" height="55px" width="55px" class="rounded-circle text-center">
+							</div>
+
+						<p class="display-5">User Name : <?php echo $profile->fname ?> <?php echo $profile->lname  ?></p>
+						<p class="display-5">Email : <?php echo $profile->email ?></p>
+						<p class="display-5">Account Created At : <?php echo $profile->created_at ?></p>
+
+						</div>
+
+					<?php } ?>
+
 				</div>
 
 			</div>

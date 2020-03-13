@@ -1,3 +1,7 @@
+<?php require_once('layout/navbar.php') ?>
+<?php require_once('layout/sidebar.php'); ?>
+
+
 <?php 
 
 	
@@ -19,14 +23,6 @@
 
  ?>
 
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>IKO | HOME</title>
- </head>
- <body>
-
  	<p>YOUR ORDER IS SUBMITTED FOR PROCESSING</p>
- 
- </body>
- </html>
+
+<?php require_once('layout/footer.php') ?>

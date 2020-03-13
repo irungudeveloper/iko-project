@@ -62,7 +62,7 @@
 			try 
 			{
 				$stmt = $con->prepare($sql);
-				$stmt->execute();
+				$stmt->execute(['id'=>$id]);
 
 				$data = $stmt->fetchAll();
 				return $data;

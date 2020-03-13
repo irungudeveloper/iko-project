@@ -20,13 +20,13 @@
 
  <?php require_once('layout/sidebar.php') ?>
 
- 	<div class="col-md-9 col-sm-12">
+ 	<div class="col-md-10 col-sm-12">
 
  		<div class="row">
 
  			<?php foreach ($data as $product) { ?>
 
- 				<div class="m-2">
+ 				<div class="">
  					 
 			<form method="post" action="cart_insert.php">
 
@@ -37,7 +37,7 @@
 				<input type="hidden" name="u_id" value="<?php echo $product->user_id ?>">
 
 
-				<div class="card">
+				<div class="card" style="width:1200px;">
 
 					<div class="row no-gutters">
 						
@@ -56,11 +56,11 @@
 							    </div>
 							  </div>
 							  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-							    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
 							    <span class="sr-only">Previous</span>
 							  </a>
 							  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-							    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
 							    <span class="sr-only">Next</span>
 							  </a>
 							</div>
@@ -83,7 +83,7 @@
 
 					<div class="form-group">
 						
-						<label for="amount">AMOUNT</label>
+						<label for="amount">Amount To Buy</label>
 						<input type="number" name="amount" class="form-control" id="amount">
 
 					</div>
