@@ -26,9 +26,9 @@
 	 ?>
 
 
- 	<div class="col-md-9 col-sm-12">
+ 	<div class="col-md-10 col-sm-12">
 
- 		<div class="row">
+ 		<div class="row p-5">
  			
  			<table class="table table-striped">
  		
@@ -37,7 +37,6 @@
 		 			<th scope="col">Price</th>
 		 			<th scope="col">Amount</th>
 		 			<th scope="col">Status</th>
-		 			<th scope="col"></th>
 		 		</thead>
 		 		
 		 		<tbody>
@@ -54,22 +53,26 @@
 		 					<td><?php echo $order->title ?></td>
 		 					<td><?php echo $order->price ?></td>
 		 					<td><?php echo $order->amount ?></td>
-		 					<td><?php 
+		 					<td>
+		 						<?php 
 
 		 						$status = $order->status;
 
-		 						echo ($status == 1) ? "DELIVERED" : "PENDING";
+		 						if ($status == 1) { ?>
+		 							
+		 							<button class="btn btn-success">DELIVERED</button>
 
-		 					 ?></td>
-		 					 <td>
-		 					 	<form action="order.php" method="post">
+		 						<?php } else{ ?>  
+
+		 							<form action="order.php" method="post">
 
 		 					 		<input type="hidden" name="id" value="<?php echo $order->id?>">
 
-		 					 		<input type="submit" name="delivered" value="Delivered" class="btn btn-success p-1 pl-3 pr-3">
+		 					 		<input type="submit" name="delivered" value="PENDING" class="btn btn-warning p-1 pl-3 pr-3">
 		 					 		
 		 					 	</form>
-		 					 </td>
+
+		 					 <?php }?></td>
 
 		 				</tr>
 

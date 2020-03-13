@@ -8,6 +8,11 @@
 
 </style>
 
+
+
+<?php require_once('layout/navbar.php') ?>
+<?php require_once('layout/sidebar.php') ?>
+
 <?php 
 	
 	require_once('../config/product_class.php');
@@ -15,14 +20,12 @@
 
 	$product_data = new Product;
 	$order_data = new Order;
+	$u_id = $_SESSION['u_id'];
 
-	$product_count = $product_data->productCount();
+	$product_count = $product_data->productCount($u_id);
 	$order_count = $order_data->pendingCount();
 
  ?>
-
-<?php require_once('layout/navbar.php') ?>
-<?php require_once('layout/sidebar.php') ?>
 
 	<div class="col-md-10 col-sm-12">
 
@@ -31,7 +34,17 @@
 				<div class="card col-md-3 bg-primary m-2 card-height">
 					<div class="card-body">
 						<h5 class="text-white font-weight-bold ">Products In Stock</h5>
-						<p class="text-white float-right display-4"><?php echo $product_count ?></p>
+						<p class="text-white float-right display-4">
+							
+							<?php //echo $product_count 
+
+								foreach ($product_count as $prod_data) {
+									echo $prod_data->totalproducts;
+								}
+
+							?>
+								
+						</p>
 					</div>
 
 						<p class="float-right text-white display-5"><i class="fas fa-arrow-circle-right float-right"></i></p>
@@ -41,7 +54,14 @@
 				<div class="card col-md-3 bg-warning m-2 ml-5 card-height">
 					<div class="card-body">
 						<h5 class="text-white font-weight-bold">Pending Orders</h5>
-						<p class="text-white float-right display-4"><?php echo $order_count ?></p>
+						<p class="text-white float-right display-4">
+								<?php 
+										foreach ($order_count as $data) {
+											echo $data->totalorders;
+										}
+								 ?>
+										
+						</p>
 					</div>
 
 					<p class="float-right text-white display-5"><i class="fas fa-arrow-circle-right float-right"></i></p>

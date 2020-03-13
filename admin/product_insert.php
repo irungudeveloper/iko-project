@@ -44,15 +44,16 @@
 
  ?>
 
- 	<div class="col-md-9 col-sm-12">
+ 	<div class="col-md-10 col-sm-12">
 
  		
 
- 		<div class="row justify-content-end">
- 			<p class="display-5 text-primary pt-4"><span><b>+</b></span> New Product</p>
+ 		<div class="row justify-content-end pr-4 pt-3">
+ 			<p class="display-5 text-primary"><span><b>+</b></span> New Product</p>
  		</div>
+
  			
- 		<form action="product_insert.php" method="post" enctype="multipart/form-data">
+ 		<form action="product_insert.php" method="post" enctype="multipart/form-data" class="p-4 bg-white">
 
  			<div class="form-row">
 
@@ -139,7 +140,7 @@
  				<div class="form-group">
 
 			    <label for="exampleFormControlTextarea1">Product Description</label>
-		   		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="150" name="description"></textarea>
+		   		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="200" name="description"></textarea>
 
 			 </div>
  				

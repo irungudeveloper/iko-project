@@ -191,13 +191,15 @@
 			$pdo = new Database;
 			$con = $pdo->connect();
 
-			$sql = "SELECT COUNT(id) FROM orders WHERE status = 0";
+			$sql = "SELECT COUNT(*) AS totalorders FROM orders WHERE status = 0 ";
 
 			try 
 			{
-
+				$status = 1;
 				$stmt = $con->prepare($sql);
-				$data = $stmt->execute();
+				$stmt->execute();
+
+				$data = $stmt->fetchAll(); 
 
 				return $data;
 				

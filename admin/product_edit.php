@@ -24,47 +24,77 @@
 
 	<?php foreach ($data as $product) { ?>
 
-		<form method="POST" action="product_update.php">
+		<div class="col-md-10">
+
+			<form method="POST" action="product_update.php">
 
 			<input type="hidden" name="id" value="<?php echo $product->id ?>">
 			
-			<label>Title</label>
-			<input type="text" name="title" value="<?php echo $product->title?>">
+			<div class="form-row">
 
-			<br>
-
-			<label>Price</label>
-			<input type="number" name="price" value="<?php echo $product->price ?>">
-
-			<br>
-
-			<label>Stock</label>
-			<input type="number" name="stock" value="<?php echo $product->stock ?>">
-
-			<br>
-
-			<label>Location</label>
-			<input type="text" name="location" value="<?php echo $product->location ?>">
-
-			<br>
-
-			<select name="cat_id">
-				
-				<?php foreach ($category_data as $category) { ?>
+				<div class="form-group col-md-12">
 					
-					<option value="<?php echo $category->id ?>"><?php echo $category->name ?></option>
+					<label for="title">Title</label>
+					<input type="text" name="title" value="<?php echo $product->title?>" id="title" class="form-control">
 
-				<?php } ?>
 
-			</select>
+				</div>
+				
+			</div>
 
-			<br>
+			<div class="form-row">
 
-			<input type="submit" name="update" value="Update Product">
+				<div class="form-group col-md-6">
+					
+					<label for="price">Price</label>
+					<input type="number" name="price" value="<?php echo $product->price ?>" id="price" class="form-control">
+
+				</div>
+
+				<div class="form-group col-md-6">
+					
+						<label for="stock">Stock</label>
+						<input type="number" name="stock" value="<?php echo $product->stock ?>" id="stock" class="form-control">
+
+				</div>
+
+			</div>
+
+			<div class="form-row">
+				
+				<div class="form-group col-md-6">
+					
+					<label for="location">Location</label>
+					<input type="text" name="location" value="<?php echo $product->location ?>" id="location" class="form-control">
+
+				</div>
+
+				<div class="form-group col-md-6">
+					
+					<label for="select">Choose Category</label>
+
+					<select name="cat_id" class="form-control" id="select">
+				
+					<?php foreach ($category_data as $category) { ?>
+						
+						<option value="<?php echo $category->id ?>"><?php echo $category->name ?></option>
+
+					<?php } ?>
+
+					</select>
+
+				</div>
+
+			</div>
+
+			<input type="submit" name="update" value="Update Product" class="btn btn-success p-1 pl-3 pr-3">
 
 		</form>
 
 	<?php } ?>
-
+			
+		</div>
 
 </div>
+
+<?php require_once('layout/footer.php') ?>

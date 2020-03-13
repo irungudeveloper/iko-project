@@ -181,20 +181,22 @@
 
 		}
 
-		public function productCount()
+		public function productCount($id)
 		{
 
 			$pdo = new Database;
 			$con = $pdo->connect();
 
-			$sql = "SELECT COUNT(title) FROM products";
+			$sql = "SELECT COUNT(*) AS totalproducts FROM products WHERE user_id = :id ";
 
 			try 
 			{
 				$stmt = $con->prepare($sql);
-				$data = $stmt->execute();
+				$stmt->execute(['id'=>$id]);
 
-				return $data;	
+				$data = $stmt->fetchAll();
+
+				return $data;
 				
 			} 
 			catch (Exception $e) 
