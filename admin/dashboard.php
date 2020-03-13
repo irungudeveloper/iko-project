@@ -85,7 +85,7 @@
 
 		<div class="row p-3">
 
-			<div class="col-md-6 p-0">
+			<div class="col-md-12 p-0">
 				
 				<div class="card">
 
@@ -136,33 +136,6 @@
 
 			</div>
 
-			<div class="col-md-1">
-				
-			</div>
-
-			<div class="col-md-5 bg-white">
-				
-				<div class="row p-3">
-					
-					<?php foreach ($user_profile as $profile) { ?>
-						
-						<div class="col-md-12">
-
-							<div class="row justify-content-center">
-								<img src="images/<?php echo $profile->image ?>" height="55px" width="55px" class="rounded-circle text-center">
-							</div>
-
-						<p class="display-5">User Name : <?php echo $profile->fname ?> <?php echo $profile->lname  ?></p>
-						<p class="display-5">Email : <?php echo $profile->email ?></p>
-						<p class="display-5">Account Created At : <?php echo $profile->created_at ?></p>
-
-						</div>
-
-					<?php } ?>
-
-				</div>
-
-			</div>
 			
 		</div>
 

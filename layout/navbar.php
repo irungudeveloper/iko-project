@@ -40,7 +40,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light pb-md-3 pt-md-3">
   <a class="navbar-brand" href="#">
   		
-  		<img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+  		<img src="images/iko_logo.png" width="100" height="100" alt="">
 
   		IKO
 	</a>

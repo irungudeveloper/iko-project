@@ -49,7 +49,7 @@
  	<?php require_once('layout/navbar.php') ?>
  	<?php require_once('layout/sidebar.php') ?>
 
- 	<div class="col-md-9 col-sm-12 m-2 p-0 m-0">
+ 	<div class="col-md-10 col-sm-12 p-0 m-0">
 
 
  		<p class="display-5 font-weight-bold">Your Cart</p>
