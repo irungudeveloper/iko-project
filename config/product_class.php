@@ -207,7 +207,34 @@
 			}
 
 		}
-		
+
+		public function searchProduct($search)
+		{
+			$pdo = new Database;
+			$con = $pdo->connect();
+
+			$sql = "SELECT * FROM products WHERE title LIKE CONCAT('%',:search,'%') ";
+
+			try 
+			{
+			
+				$stmt = $con->prepare($sql);
+				$stmt->execute([
+
+						'search'=>$search
+
+						]);
+
+				$data = $stmt->fetchAll();
+				return $data;
+
+			} 
+			catch (Exception $e) 
+			{
+				return false;
+			}
+		}
+
 	}
 
  ?>

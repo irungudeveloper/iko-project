@@ -69,9 +69,9 @@
       </li>
      
     </ul>
-    <form class="form-inline">
-      <input class="form-control pl-5 pr-5" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-success my-2 my-sm-0 ml-md-3" type="submit">Search</button>
+    <form action="search.php" method="POST" class="form-inline">
+      <input class="form-control pl-5 pr-5" type="search" placeholder="Search" aria-label="Search" name="search">
+      <button class="btn btn-success my-2 my-sm-0 ml-md-3" type="submit" name="search_btn">Search</button>
     </form>
 
     <ul class="navbar-nav ml-auto">

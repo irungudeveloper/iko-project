@@ -47,7 +47,7 @@ require_once('config/category_class.php');
 
 		<?php foreach ($category_data as $category) { ?>
 			
-			<a href=""><li class="list-group-item point" id="<?php echo $category->id ?>">
+			<a id="<?php echo $category->id ?>" onclick="cat_id(this.id)"><li class="list-group-item point p-2">
 
 				<?php echo $category->name ?></li></a>
 			
@@ -61,5 +61,29 @@ require_once('config/category_class.php');
 	<div class="check">
 		
 	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		
+		$(document).ready(function cat_id(clicked)
+		{
+			var id = clicked;
+
+			$.ajax({
+
+				url : 'category_view.php',
+				type : 'POST',
+				data : {category_id : id},
+				dataType : 'json',
+				success : function(data)
+				{
+					console.log(data);
+				}
+
+				});
+
+		});
+
+	</script>
 		
 	
