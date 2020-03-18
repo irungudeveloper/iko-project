@@ -7,18 +7,24 @@
 
 </style>
 
-<?php 
+ 	<?php require_once('layout/navbar.php') ?>
+ 	<?php require_once('layout/sidebar.php') ?>
+
+ 	<?php 
 
 	require_once('config/cart_class.php');
-	// require_once('config/order_class.php');
+
+	$session_id = "";
+
+	if (isset($_SESSION['u_id'])) 
+	
+		$session_id = $_SESSION['u_id'];
+	
 
 	$cart = new Cart;
-	$data = $cart->displayCart();
-	$total = $cart->totalSum();
-	// $oder = new Order;
-
-	//print_r($total);
-
+	$data = $cart->displayCart($session_id);
+	$total = $cart->totalSum($session_id);
+	
 	foreach ($total as $value) 
 	{
 		
@@ -46,15 +52,11 @@
  ?>
 
  	
- 	<?php require_once('layout/navbar.php') ?>
- 	<?php require_once('layout/sidebar.php') ?>
 
  	<div class="col-md-10 col-sm-12 p-0 m-0">
 
-
- 		<p class="display-5 font-weight-bold">Your Cart</p>
-
- 		<div class="row">
+	<div class="row p-3 bg-white m-2">
+ 		<p class="display-4 text-danger">Your Cart</p>
 
  			<table class="table">
  			

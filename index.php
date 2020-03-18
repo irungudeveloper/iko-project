@@ -50,20 +50,26 @@
  			<p class="h4 font-weight-bold">Recent Products & Services</p>
  		</div>
 
+ 		<div class="row">
+ 			
+ 				
+ 			
+ 		
+
  		<?php foreach ($data as $product) { ?>
 
- 			<div class="card col-md-3 m-2">
- 				<img src="images/<?php echo $product->image1 ?>" class="pt-2 card-img" alt="" width="500px" height="250px">
+ 			<div class="col-md-3 col-sm-6">
+ 			<div class="card m-1">
+ 				<img src="images/<?php echo $product->image1 ?>" class="card-img" alt="" width="900px" height="150px">
 
  				<div class="card-body">
 
- 					<h5 class="card-title"><?php echo $product->title ?></h5>
- 					<p class="card-text">Price : <?php echo $product->price ?></p>
- 					<p class="card-text">Location : <?php echo $product->location ?></p>
+ 					<p class="card-text"><?php echo $product->title ?></p>
+ 					<p class="card-text">Price <span class="badge badge-danger"><?php echo $product->price ?></span></p>
 
  				</div>
 
- 					<form method="GET" action="product_view.php">
+ 					<form method="GET" action="product_view.php" class="text-center">
 
 					<input type="hidden" name="id" value="<?php echo $product->id ?>">
 
@@ -72,11 +78,12 @@
 				</form>
  					
  			</div>
+ 			</div>
  			
 		<?php } ?>
 
 	</div>
- 		
+ 		</div>
  	</div>
 
  </div>

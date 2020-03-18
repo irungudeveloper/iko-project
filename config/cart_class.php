@@ -11,7 +11,7 @@
 			$con = $pdo->connect();
 		}
 		
-		public function insertCart($title, $price, $amount, $u_id)
+		public function insertCart($title, $price, $amount, $u_id, $p_id, $sess_id)
 		{
 
 			$pdo = new Database;
@@ -20,7 +20,7 @@
 			try 
 			{
 		
-				$sql = "INSERT INTO cart (title,price,amount,user_id) VALUES (:title,:price,:amount,:u_id)";
+				$sql = "INSERT INTO cart (title,price,amount,user_id,product_id,session_id) VALUES (:title,:price,:amount,:u_id,:p_id,:sess_id)";
 				$stmt = $con->prepare($sql);
 
 				$stmt->execute([
@@ -28,7 +28,9 @@
 						'title'=>$title,
 						'price'=>$price,
 						'amount'=>$amount,
-						'u_id'=>$u_id
+						'u_id'=>$u_id,
+						'p_id'=>$p_id,
+						'sess_id'=>$sess_id
 
 					]);
 
@@ -44,7 +46,7 @@
 				
 		}
 
-		public function displayCart()
+		public function displayCart($sess_id)
 		{
 
 			$pdo = new Database;
@@ -53,10 +55,13 @@
 			try 
 			{
 			
-				$sql = "SELECT * FROM cart";
+				$sql = "SELECT * FROM cart WHERE session_id=:s_id";
 				$stmt = $con->prepare($sql);
 
-				$stmt->execute();
+				$stmt->execute([
+						's_id'=>$sess_id
+					]);
+				
 				$cart = $stmt->fetchAll();
 			
 				return $cart;
@@ -71,7 +76,7 @@
 
 		}
 
-		public function totalSum()
+		public function totalSum($sess_id)
 		{
 			
 
@@ -81,9 +86,11 @@
 			try 
 			{
 				
-				$sql = "SELECT SUM(price*amount)FROM cart";
+				$sql = "SELECT SUM(price*amount)FROM cart WHERE session_id=:s_id";
 				$stmt = $con->prepare($sql);
-				$stmt->execute();
+				$stmt->execute([
+						's_id'=>$sess_id
+					]);
 				$data = $stmt->fetchAll();
 
 				return $data;

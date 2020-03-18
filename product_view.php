@@ -30,12 +30,13 @@
  					 
 			<form method="post" action="cart_insert.php">
 
+				<input type="hidden" name="p_id" value="<?php echo $product->id ?>">
 				<input type="hidden" name="title" value="<?php echo $product->title ?>">
 				<input type="hidden" name="price" value="<?php echo $product->price ?>">
 
 				<input type="hidden" name="id" value="<?php echo $product->id ?>">
 				<input type="hidden" name="u_id" value="<?php echo $product->user_id ?>">
-
+				<input type="hidden" name="sess_id" value="<?php echo $_SESSION['u_id'] ?>">
 
 				<div class="card" style="width:1200px;">
 
