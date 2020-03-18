@@ -35,7 +35,7 @@
 <nav class="navbar navbar-expand-lg navbar-light pb-md-3 pt-md-3 sticky-top">
   <a class="navbar-brand" href="#">
 
-      <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+      <img src="../images/iko_logo.png" alt="">
       IKO
   
   </a>
@@ -44,7 +44,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto pl-5">
       <li class="nav-item active">
         <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
       </li>

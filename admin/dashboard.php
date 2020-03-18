@@ -25,7 +25,7 @@
 	$u_id = $_SESSION['u_id'];
 
 	$product_count = $product_data->productCount($u_id);
-	$order_count = $order_data->pendingCount();
+	$order_count = $order_data->pendingCount($u_id);
 	$user_profile = $user_data->displayUser($u_id);
 
  ?>

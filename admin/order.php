@@ -33,7 +33,9 @@
  			<table class="table table-striped">
  		
 		 		<thead class="thead-light">
-		 			<th scope="col">Title</th>
+		 			<th scope="col">Customer Name</th>
+		 			<th scope="col">Customer Contact</th>
+		 			<th scope="col">Product</th>
 		 			<th scope="col">Price</th>
 		 			<th scope="col">Amount</th>
 		 			<th scope="col">Status</th>
@@ -49,7 +51,8 @@
 		 			?>
 		 			
 		 				<tr>
-		 					
+		 					<td></td>
+		 					<td></td>
 		 					<td><?php echo $order->title ?></td>
 		 					<td><?php echo $order->price ?></td>
 		 					<td><?php echo $order->amount ?></td>

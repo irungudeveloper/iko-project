@@ -22,7 +22,7 @@
 				$stmt->execute();
 				$data = $stmt->fetchAll();
 
-				$order_sql = "INSERT INTO orders (title,price,total,amount,user_id) VALUES (:title,:price,:total,:amount,:u_id)";
+				$order_sql = "INSERT INTO orders (title,price,total,amount,user_id,product_id,session_id) VALUES (:title,:price,:total,:amount,:u_id,:p_id,:sesh_id)";
 
 				foreach ($data as $order) 
 				{
@@ -32,6 +32,8 @@
 					$total = ($order->amount)*($order->price);
 					$amount = $order->amount;
 					$u_id = $order->user_id;
+					$p_id = $order->product_id;
+					$sesh_id = $order->session_id;
 
 					try 
 					{
@@ -44,9 +46,13 @@
 							'price' => $price,
 							'total' => $total,
 							'amount' => $amount,
-							'u_id' => $u_id
+							'u_id' => $u_id,
+							'p_id' => $p_id,
+							'sesh_id'=>$sesh_id
 
 						]);
+
+						$this->updateAmount($p_id,$amount);
 						
 					} 
 					catch (Exception $e) 
@@ -67,6 +73,62 @@
 				return false;
 
 			}
+
+		}
+
+		public function updateAmount($p_id,$amount)
+		{
+
+			$dbamount_sql = "SELECT stock FROM products WHERE id = :p_id";
+			$pdo = new Database;
+			$con = $pdo->connect();
+
+			try 
+			{
+			
+
+				$stmt = $con->prepare($dbamount_sql);
+				$stmt->execute([
+
+						'p_id'=>$p_id
+
+					]);
+
+				$db_amount = $stmt->fetchAll();
+
+				foreach ($db_amount as $db_data) 
+				{
+					$stock = $db_data->stock;
+					$rem_amount = $stock - $amount;
+
+				}
+
+				$update_sql = "UPDATE products SET stock = :stock WHERE id = :id";
+
+				try 
+				{
+
+					$u_stmt = $con->prepare($update_sql);
+					$u_stmt->execute([
+
+								'stock'=>$rem_amount,
+								'id'=>$p_id
+
+							]);
+
+					return true;
+					
+				} 
+				catch (Exception $e) 
+				{
+					return "Could Not Update";
+				}
+
+			} 
+			catch (Exception $e) 
+			{
+			 	return false;	
+			} 
 
 		}
 
@@ -186,18 +248,20 @@
 
 		}
 
-		public function pendingCount()
+		public function pendingCount($id)
 		{
 			$pdo = new Database;
 			$con = $pdo->connect();
 
-			$sql = "SELECT COUNT(*) AS totalorders FROM orders WHERE status = 0 ";
+			$sql = "SELECT COUNT(*) AS totalorders FROM orders WHERE status = 0 AND user_id = :id ";
 
 			try 
 			{
 				$status = 1;
 				$stmt = $con->prepare($sql);
-				$stmt->execute();
+				$stmt->execute([
+						'id'=>$id
+					]);
 
 				$data = $stmt->fetchAll(); 
 

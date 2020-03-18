@@ -28,13 +28,13 @@
 		try 
 		{
 			$user->createUser($fname,$lname,$img1,$email,$hash,$type,$date);
-			
-			header('Location : index.php');	
 		} 
 		catch (Exception $e) 
 		{
 			return false;
 		}
+
+		header('Location : index.php');
 
 	}
 
