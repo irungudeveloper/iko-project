@@ -1,3 +1,12 @@
+<style>
+	
+	.card:hover
+	{
+		box-shadow: 0px 5px 5px gray;
+	}
+
+</style>
+
 <?php 
 
 	require_once('config/product_class.php');
@@ -12,7 +21,7 @@
 
  	<?php require_once('layout/sidebar.php') ?>
 
- 	<div class="col-md-10 col-sm-12">
+ 	<div class="col-md-10 col-12 col-sm-12">
 
  		<div class="row p-2">
  			
@@ -58,8 +67,8 @@
 
  		<?php foreach ($data as $product) { ?>
 
- 			<div class="col-md-3 col-sm-6">
- 			<div class="card m-1">
+ 			<div class="col-md-3 col-sm-12 col-12">
+ 			<div class="card m-3 col-sm-12 col-12">
  				<img src="images/<?php echo $product->image1 ?>" class="card-img" alt="" width="900px" height="150px">
 
  				<div class="card-body">

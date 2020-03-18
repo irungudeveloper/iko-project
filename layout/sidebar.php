@@ -39,9 +39,9 @@ require_once('config/category_class.php');
 
 </style>
 
-<div class="row m-0 p-0">
+<div class="row m-0 p-0 d-sm-none d-none">
 
-	<div class="col-md-2 d-sm-none d-md-block mt-3">
+	<div class="col-md-2 mt-3">
 
 		<ul class="list-group list-group-flush">
 
