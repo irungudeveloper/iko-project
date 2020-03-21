@@ -34,8 +34,6 @@
 			return false;
 		}
 
-		header('Location : index.php');
-
 	}
 
  ?>

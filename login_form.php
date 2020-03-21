@@ -1,13 +1,22 @@
+<style>
+	
+	.content
+	{
+		min-height: 100vh; 
+	}
+
+</style>
+
 <?php require_once('layout/navbar.php') ?>
 
-		<div class="col-md-12 col-sm-12">
+		<div class="col-md-12 col-sm-12 content">
 
  		
 
  		<p class="text-center pt-3 text-danger">* Log In Details</p>
  		<div class="row justify-content-center">
  			
- 			<form action="login.php" method="post" class="bg-light p-4">
+ 			<form action="login.php" method="post" class="bg-light p-4 m-2">
 
  			<div class="form-row">
  				

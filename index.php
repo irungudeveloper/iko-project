@@ -25,18 +25,18 @@
 
  		<div class="row p-2">
  			
- 			<div class="col-md-12 d-sm-none d-md-block">
+ 			<div class="col-md-12 d-sm-none d-md-block d-none">
  				
  				<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-				  <div class="carousel-inner" style="height: 350px;">
+				  <div class="carousel-inner">
 				    <div class="carousel-item active">
-				      <img src="images/iko_carousel.png" class="d-block w-100" alt="...">
+				      <img src="images/iko_carousel.png" class="d-block w-100" alt="..." height="300px">
 				    </div>
 				    <div class="carousel-item">
-				      <img src="images/iko_carousel_2.png" class="d-block w-100" alt="...">
+				      <img src="images/iko_carousel_2.png" class="d-block w-100" alt="..." height="300px">
 				    </div>
 				    <div class="carousel-item">
-				      <img src="images/iko_carousel_3.png" class="d-block w-100" alt="...">
+				      <img src="images/iko_carousel_3.png" class="d-block w-100" alt="..." height="300px">
 				    </div>
 				  </div>
 				  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
@@ -53,13 +53,13 @@
 
  		</div>
 
- 		<div class="row p-3 m-2 bg-white ">
+ 		<div class="row m-2 bg-white ">
 
  		<div class="col-md-12">
  			<p class="h4 font-weight-bold">Recent Products & Services</p>
  		</div>
 
- 		<div class="row">
+ 		<div class="row m-5">
  			
  				
  			
@@ -67,8 +67,8 @@
 
  		<?php foreach ($data as $product) { ?>
 
- 			<div class="col-md-3 col-sm-12 col-12">
- 			<div class="card m-3 col-sm-12 col-12">
+ 			<div class="col-md-3 col-sm-6">
+ 			<div class="card mt-2">
  				<img src="images/<?php echo $product->image1 ?>" class="card-img" alt="" width="900px" height="150px">
 
  				<div class="card-body">

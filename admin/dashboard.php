@@ -34,10 +34,10 @@
 
 			<div class="row p-3">
 
-				<div class="card col-md-3 bg-primary m-2 card-height">
+				<div class="card col-md-3 bg-primary m-2 card-height col-sm-12">
 					<div class="card-body">
-						<h5 class="text-white font-weight-bold ">Products In Stock</h5>
-						<p class="text-white float-right display-4">
+						<h5 class="text-white font-weight-bold text-wrap">Products In Stock</h5>
+						<p class="text-white float-right display-4 text-wrap">
 							
 							<?php //echo $product_count 
 
@@ -54,10 +54,10 @@
 					
 				</div>
 
-				<div class="card col-md-3 bg-warning m-2 ml-5 card-height">
+				<div class="card col-md-3 bg-warning m-2 ml-md-5 card-height col-sm-12">
 					<div class="card-body">
-						<h5 class="text-white font-weight-bold">Pending Orders</h5>
-						<p class="text-white float-right display-4">
+						<h5 class="text-white font-weight-bold text-wrap">Pending Orders</h5>
+						<p class="text-white float-right display-4 text-wrap">
 								<?php 
 										foreach ($order_count as $data) {
 											echo $data->totalorders;
@@ -71,9 +71,9 @@
 
 				</div>
 
-				<div class="card col-md-3 bg-success m-2 ml-5 card-height">
+				<div class="card col-md-3 bg-success m-2 ml-md-5 card-height">
 					<div class="card-body">
-						<h5 class="text-white">Total Sales</h5>
+						<h5 class="text-white text-wrap">Total Sales</h5>
 						<p></p>
 					</div>
 

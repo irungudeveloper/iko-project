@@ -22,7 +22,7 @@
 
  	<div class="col-md-10 col-sm-12">
 
- 		<div class="row">
+ 		<div class="row justify-content-center m-2">
 
  			<?php foreach ($data as $product) { ?>
 
@@ -38,12 +38,12 @@
 				<input type="hidden" name="u_id" value="<?php echo $product->user_id ?>">
 				<input type="hidden" name="sess_id" value="<?php echo $_SESSION['u_id'] ?>">
 
-				<div class="card" style="width:1200px;">
+				<div class="card w-100">
 
 					<div class="row no-gutters">
-						
-						<div class="col-md-4">
-							
+
+						<div class="col-sm-12 col-12 d-md-block">
+
 							<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 							  <div class="carousel-inner">
 							    <div class="carousel-item active">
@@ -65,7 +65,7 @@
 							    <span class="sr-only">Next</span>
 							  </a>
 							</div>
-
+							
 						</div>
 
 						<div class="col-md-8">

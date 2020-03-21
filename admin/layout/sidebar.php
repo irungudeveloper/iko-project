@@ -3,8 +3,8 @@
 	
 	.side-nav
 	{
-		background-color: #414A4C !important;
-		height: 100vh;
+		background-color: white !important;
+		/*height: 100vh;*/
 		padding-top: 20px;
 		text-align: justify;
 	}
@@ -14,7 +14,7 @@
 		text-decoration: none !important;
 		list-style: none;
 		font-size: 18px;
-		color: #f5f5f5;
+		color: black;
 		padding-bottom: 10px;
 		border-bottom: 1px solid-white;
 		margin-left: 4px;
@@ -75,5 +75,4 @@
 		  <li class=""><i class="fas fa-money-bill-wave"></i>  Manage Sales</li>
 
 	</div>
-		
 	

@@ -20,6 +20,13 @@
     margin-top: 10px;
   }
 
+  .brand-img
+  {
+    border-radius: 40%;
+    height: 80px !important;
+    width: 80px !important; 
+  }
+
 </style>
 
 <?php require_once('header.php') ?>
@@ -40,10 +47,15 @@
 		<nav class="navbar navbar-expand-lg navbar-light pb-md-3 pt-md-3">
   <a class="navbar-brand" href="#">
   		
-  		<img src="images/iko_logo.png" width="100" height="100" alt="">
+  		<img src="images/iko_logo.png" width="100" height="100" alt="" class="brand-img">
 
   		IKO
 	</a>
+
+  <form action="search.php" method="POST" class="form-inline d-md-none d-sm-block d-block">
+      <input class="form-control pl-5 pr-5" type="search" placeholder="Search" aria-label="Search" name="search">
+      <button class="btn btn-success d-none d-sm-none d-md-block" type="submit" name="search_btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -69,9 +81,10 @@
       </li>
      
     </ul>
-    <form action="search.php" method="POST" class="form-inline">
+    <form action="search.php" method="POST" class="form-inline d-sm-none d-none d-md-block">
       <input class="form-control pl-5 pr-5" type="search" placeholder="Search" aria-label="Search" name="search">
-      <button class="btn btn-success my-2 my-sm-0 ml-md-3" type="submit" name="search_btn">Search</button>
+      <button class="btn btn-success my-2 my-sm-0 ml-md-3" type="submit" name="search_btn"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
     </form>
 
     <ul class="navbar-nav ml-auto">
@@ -95,7 +108,7 @@
               <a href="create_user.php" class="nav-link">SIGN UP</a>      
             </li>
 
-            <li class="nav-item d-sm-none d-md-block">
+            <li class="nav-item d-none d-sm-none ">
                <a href="#" class="nav-link">|</a>
             </li>
               

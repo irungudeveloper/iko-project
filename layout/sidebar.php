@@ -37,11 +37,16 @@ require_once('config/category_class.php');
     	color: black;
     }
 
+    .content
+    {
+    	min-height: 100vh;
+    }
+
 </style>
 
-<div class="row m-0 p-0 d-sm-none d-none">
+<div class="row m-0 p-0 mt-3 content">
 
-	<div class="col-md-2 mt-3">
+	<div class="col-md-2 mt-3 d-sm-none d-md-block d-none">
 
 		<ul class="list-group list-group-flush">
 
@@ -61,29 +66,3 @@ require_once('config/category_class.php');
 	<div class="check">
 		
 	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		
-		$(document).ready(function cat_id(clicked)
-		{
-			var id = clicked;
-
-			$.ajax({
-
-				url : 'category_view.php',
-				type : 'POST',
-				data : {category_id : id},
-				dataType : 'json',
-				success : function(data)
-				{
-					console.log(data);
-				}
-
-				});
-
-		});
-
-	</script>
-		
-	

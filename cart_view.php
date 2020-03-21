@@ -5,6 +5,8 @@
 		background-color: tomato;
 	}
 
+
+
 </style>
 
  	<?php require_once('layout/navbar.php') ?>
@@ -53,12 +55,12 @@
 
  	
 
- 	<div class="col-md-10 col-sm-12 p-0 m-0">
+ 	<div class="col-md-10 col-sm-12 p-0 m-0 ">
 
-	<div class="row p-3 bg-white m-2">
+	<div class="row p-3 bg-white m-3">
  		<p class="display-4 text-danger">Your Cart</p>
 
- 			<table class="table">
+ 			<table class="table table-responsive-sm ">
  			
  			<thead class="thead-light">
  				<th scope="col">Title</th>
