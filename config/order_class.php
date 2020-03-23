@@ -13,6 +13,7 @@
 
 			$pdo = new Database;
 			$con = $pdo->connect();
+			$date = date('Y-m-d');
 
 			try 
 			{
@@ -22,7 +23,7 @@
 				$stmt->execute();
 				$data = $stmt->fetchAll();
 
-				$order_sql = "INSERT INTO orders (title,price,total,amount,user_id,product_id,session_id) VALUES (:title,:price,:total,:amount,:u_id,:p_id,:sesh_id)";
+				$order_sql = "INSERT INTO orders (title,price,total,amount,user_id,product_id,session_id,created_at) VALUES (:title,:price,:total,:amount,:u_id,:p_id,:sesh_id,:c_date)";
 
 				foreach ($data as $order) 
 				{
@@ -48,7 +49,8 @@
 							'amount' => $amount,
 							'u_id' => $u_id,
 							'p_id' => $p_id,
-							'sesh_id'=>$sesh_id
+							'sesh_id'=>$sesh_id,
+							'c_date'=>$date
 
 						]);
 

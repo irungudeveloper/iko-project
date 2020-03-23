@@ -16,10 +16,11 @@
 
 			$pdo = new Database;
 			$con = $pdo->connect();
+			$date = date('Y-m-d');
 
 			try {
 
-			$sql = "INSERT INTO products(title,price,stock,location,category_id,image1,image2,image3,description,user_id)VALUES(:title,:price,:stock,:location,:category_id,:image1,:image2,:image3,:description,:u_id)";
+			$sql = "INSERT INTO products(title,price,stock,location,category_id,image1,image2,image3,description,user_id,created_at)VALUES(:title,:price,:stock,:location,:category_id,:image1,:image2,:image3,:description,:u_id,:c_date)";
 			$stmt = $con->prepare($sql);
 			$stmt->execute([
 				
@@ -32,7 +33,8 @@
 							'image2'=>$img2,
 							'image3'=>$img3,
 							'description'=>$description,
-							'u_id'=>$u_id
+							'u_id'=>$u_id,
+							'c_date'=>$date
 
 					]);
 			echo "Product Added";
