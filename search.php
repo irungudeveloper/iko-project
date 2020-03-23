@@ -21,49 +21,35 @@
 
  <div class="col-md-10">
 
- 	<div class="row p-2">
+ 	<div class="row p-2 bg-white m-2">
+
+ 		<div class="col-md-12 col-12">
+ 			<p class="text-danger display-5">Searching For <span class="badge-secondary bg-info pl-3 pr-3 rounded-pill"><?php echo $search_data ?></span></p>
+ 		</div>
 
  		<?php foreach ($search as $product) { ?>
  			
- 			<div class="card m-2" style="width:1200px;">
+ 			<div class="col-md-3 col-sm-6">
+ 			<div class="card mt-2">
+ 				<img src="images/<?php echo $product->image1 ?>" class="card-img" alt="" width="900px" height="150px">
 
-					<div class="row no-gutters">
-						
-						<div class="col-md-4">
-							
-							<img src="images/<?php echo $product->image1 ?>" class="d-block w-100" height="200px" width="200px">	
-						
-						</div>
+ 				<div class="card-body">
 
-						<div class="col-md-8">
+ 					<p class="card-text"><?php echo $product->title ?></p>
+ 					<p class="card-text">Price <span class="badge badge-danger"><?php echo $product->price ?></span></p>
 
-							<div class="card-body">
-								
-								<h5 class="card-title"><b class="mb-3">Title</b> <br><?php echo $product->title ?></h5>
+ 				</div>
 
-								<p><b>Description</b> <br>
-									<?php echo $product->description ?>
-								</p>
-								<p class="card-text">Price : <?php echo $product->price ?>/=</p>
+ 					<form method="GET" action="product_view.php" class="text-center">
 
-								<div class="form-row">
+					<input type="hidden" name="id" value="<?php echo $product->id ?>">
 
-									<form method="GET" action="product_view.php">
-
-									<input type="hidden" name="id" value="<?php echo $product->id ?>">
-
-									<input type="submit" name="view" value="VIEW PRODUCT" class="btn btn-success p-1 pl-3 pr-3 m-2">
-									
-								</form>
-
-							</div>
-							
-						</div>
-
-					</div>
+					<input type="submit" name="view" value="VIEW PRODUCT" class="btn btn-success p-1 pl-3 pr-3 m-2">
 					
-		</div>
-	</div>
+				</form>
+ 					
+ 			</div>
+ 			</div>
 
  		<?php }}else { ?> <p class="text-center text-danger">Invalid Search</p> <?php } } else{echo "Search For Product First";} ?>
 
