@@ -274,6 +274,31 @@
 				return false;
 			}
 		}
+
+		public function totalSales($id)
+		{
+
+			$pdo = new Database;
+			$con = $pdo->connect();
+
+			$sql = "SELECT SUM(total) AS totals FROM orders WHERE user_id=:id";
+
+			try 
+			{
+				$stmt = $con->prepare($sql);
+				$stmt->execute(['id'=>$id]);
+
+				$data = $stmt->fetchAll();
+
+				return $data;
+
+			} 
+			catch (Exception $e) 
+			{
+				return false;
+			}
+
+		}
 		
 	}
 

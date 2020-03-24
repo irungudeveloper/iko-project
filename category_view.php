@@ -15,20 +15,18 @@
 
 		?>
 
-		<div class="col-md-10">
-		<div class="row m-2 bg-white p-2">
+ <div class="col-md-10">
 
- 		<div class="col-md-12">
- 			<p class="h4 font-weight-bold">Category <span class="badge rounded-pill bg-danger text-white pl-4 pr-4"><?php echo $_GET['category']; ?></span></p>
+ 	<div class="row p-2 bg-white m-2">
+
+ 		<div class="col-md-12 col-12">
+ 			<p class="text-white display-2 badge rounded-pill pl-4 pr-4 p-3 bg-secondary"><?php echo $_GET['category'] ?></span></p>
  		</div>
 
- 		<div class="row m-2">
-
-		<?php foreach ($product_data as $product) { ?>
-	
-
-			<div class="col-md-3 col-sm-6">
- 			<div class="card mt-2 w-100">
+ 		<?php foreach ($product_data as $product) { ?>
+ 			
+ 			<div class="col-md-3 col-sm-6">
+ 			<div class="card mt-2">
  				<img src="images/<?php echo $product->image1 ?>" class="card-img" alt="" width="900px" height="150px">
 
  				<div class="card-body">
@@ -49,10 +47,12 @@
  			</div>
  			</div>
 
- 	<?php }} ?>
+ 		<?php }}?>
 
+ 		
+ 		
+ 	</div>
+ 	
  </div>
-</div>
-</div>
 
 <?php require_once('layout/footer.php') ?>

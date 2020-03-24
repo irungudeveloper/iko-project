@@ -27,6 +27,7 @@
 	$product_count = $product_data->productCount($u_id);
 	$order_count = $order_data->pendingCount($u_id);
 	$user_profile = $user_data->displayUser($u_id);
+	$sales_total = $order_data->totalSales($u_id)
 
  ?>
 
@@ -74,7 +75,15 @@
 				<div class="card col-md-3 bg-success m-2 ml-md-5 card-height">
 					<div class="card-body">
 						<h5 class="text-white text-wrap">Total Sales</h5>
-						<p></p>
+						<p class="text-white float-right display-4 text-wrap">
+							
+							<?php 
+										foreach ($sales_total as $data) {
+											echo $data->totals;
+										}
+								 ?>
+
+						</p>
 					</div>
 
 					<p class="float-right text-white display-5"><i class="fas fa-arrow-circle-right float-right"></i></p>

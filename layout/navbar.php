@@ -73,7 +73,7 @@
 
         <?php foreach ($category_data as $category) { ?>
         
-        	<a class="dropdown-item" href="#"><?php echo $category->name ?></a>
+        	<a class="dropdown-item" href="category_view.php?category_id=<?php echo $category->id ?>&category=<?php echo $category->name?>"><?php echo $category->name ?></a>
         
         <?php } ?>
         </div>
