@@ -37,6 +37,7 @@ $(document).ready(function(){
           {
             label: 'Monthly Sales',
              borderColor: "#3e95cd",
+             // backgroundColor:"#3e95fd"
             data:sale
           }
         ]

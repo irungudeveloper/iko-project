@@ -24,7 +24,7 @@
 
 	<?php foreach ($data as $product) { ?>
 
-		<div class="col-md-10">
+		<div class="col-md-10 p-4">
 
 			<form method="POST" action="product_update.php">
 
