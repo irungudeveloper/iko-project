@@ -170,7 +170,7 @@
 
 					]);
 
-				$data = $stmt->fetchAlll();
+				$data = $stmt->fetchAll();
 				return $data;
 				
 			} 

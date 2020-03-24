@@ -52,7 +52,7 @@ require_once('config/category_class.php');
 
 		<?php foreach ($category_data as $category) { ?>
 			
-			<a id="<?php echo $category->id ?>" onclick="cat_id(this.id)"><li class="list-group-item point p-2">
+			<a id="<?php echo $category->id ?>" onclick="this.id" href="category_view.php?category_id=<?php echo $category->id ?>&category=<?php echo $category->name?>"><li class="list-group-item point p-2">
 
 				<?php echo $category->name ?></li></a>
 			
@@ -66,3 +66,6 @@ require_once('config/category_class.php');
 	<div class="check">
 		
 	</div>
+
+
+
