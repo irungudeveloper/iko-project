@@ -11,6 +11,19 @@
 
 		<div class="col-md-12 col-sm-12 content">
 
+			<?php 
+
+			if (!empty($_GET['message'])) 
+				{
+					$message = $_GET['message']; ?>
+
+					<div class="row">
+						<div class="col-md-12 alert alert-danger">
+							Invalid Email Or Password
+						</div>
+					</div>
+
+				<?php } ?>
  		
 
  		<p class="text-center pt-3 text-danger">* Log In Details</p>

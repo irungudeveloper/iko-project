@@ -17,15 +17,7 @@
 
  	<div class="col-md-10 col-sm-12">
 
- 		<div class="row justify-content-end pt-3 pl-3 pr-3">
- 			<form class="form-inline float-right">
-		      <input class="form-control pl-5 pr-5" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-success my-2 my-sm-0 ml-md-3" type="submit">Search</button>
-		    </form>
-
- 		</div>
-
- 		<div class="row p-3 ">
+ 		<div class="row p-3 bg-white m-3">
  			
  			<table class="table table-striped">
 			

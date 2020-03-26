@@ -24,18 +24,39 @@
  	<?php require_once('layout/navbar.php') ?>
 
  	<?php require_once('layout/sidebar.php') ?>
- 
- 	<form action="new_category.php" method="post">
+
+ 	<div class="col-md-10">
  		
- 		<input type="text" name="category" placeholder="Category Name">
+ 		<div class="row bg-white m-2 p-3">
+ 			<p class="text-danger display-4">Add New Category</p>
+ 			<form action="new_category.php" method="post" class="form ">
 
- 		<textarea rows="10" cols="30" name="description" placeholder="Category description">
+ 		<div class="form-row">
+
+ 			<div class="form-group col-md-12">
+	 			<label for="category">Category Name</label>
+	 			<input type="text" name="category" placeholder="Category Name" class="form-control" id="category">
+ 			</div>
+ 		
+ 		</div>
+ 		
+ 		<div class="form-row">
+ 			<div class="form-group col-md-12">
+ 				<label for="description">Description</label>
+ 				<textarea rows="3" cols="150" name="description" placeholder="Category description" class="form-control"></textarea>
+ 			</div>
+ 		</div>
  			
- 		</textarea>
+ 		
 
- 		<input type="submit" name="submit" value="CREATE CATEGORY">
+ 		<input type="submit" name="submit" value="CREATE CATEGORY" class="btn btn-success">
 
  	</form>
+ 		</div>
+
+ 	</div>
+ 
+ 	
 
  </div>
  

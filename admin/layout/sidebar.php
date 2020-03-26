@@ -20,6 +20,11 @@
 		margin-left: 4px;
 	}
 
+	.content
+	{
+		min-height: 100vh;
+	}
+
 	li:hover
 	{
 		cursor: pointer;
@@ -39,7 +44,7 @@
 
 </style>
 
-<div class="row m-0 p-0">
+<div class="row m-0 p-0 content">
 
 	<div class="col-md-2 d-sm-none d-md-block side-nav">
 
@@ -72,7 +77,9 @@
 
 			</li>
 		  
-		  <li class=""><i class="fas fa-money-bill-wave"></i>  Manage Sales</li>
+		  <li class="">
+		  	<a href="sales.php"><i class="fas fa-money-bill-wave"></i>  Manage Sales</a>
+		  </li>
 
 	</div>
 	
