@@ -28,7 +28,7 @@
 
  				<div class="">
  					 
-			<form method="post" action="cart_insert.php">
+			<form method="post" action="cart_insert.php" enctype="multipart/form-data">
 
 				<input type="hidden" name="p_id" value="<?php echo $product->id ?>">
 				<input type="hidden" name="title" value="<?php echo $product->title ?>">
@@ -37,6 +37,7 @@
 				<input type="hidden" name="id" value="<?php echo $product->id ?>">
 				<input type="hidden" name="u_id" value="<?php echo $product->user_id ?>">
 				<input type="hidden" name="sess_id" value="<?php echo $_SESSION['u_id'] ?>">
+				<input type="hidden" name="image" value="<?php echo $product->image1 ?>">
 
 				<div class="card w-100">
 

@@ -11,7 +11,7 @@
 			$con = $pdo->connect();
 		}
 		
-		public function insertCart($title, $price, $amount, $u_id, $p_id, $sess_id)
+		public function insertCart($title, $price, $amount, $u_id, $p_id, $sess_id, $image)
 		{
 
 			$pdo = new Database;
@@ -20,7 +20,7 @@
 			try 
 			{
 		
-				$sql = "INSERT INTO cart (title,price,amount,user_id,product_id,session_id) VALUES (:title,:price,:amount,:u_id,:p_id,:sess_id)";
+				$sql = "INSERT INTO cart (title,price,amount,user_id,product_id,session_id,image) VALUES (:title,:price,:amount,:u_id,:p_id,:sess_id,:image)";
 				$stmt = $con->prepare($sql);
 
 				$stmt->execute([
@@ -30,7 +30,8 @@
 						'amount'=>$amount,
 						'u_id'=>$u_id,
 						'p_id'=>$p_id,
-						'sess_id'=>$sess_id
+						'sess_id'=>$sess_id,
+						'image'=>$image
 
 					]);
 

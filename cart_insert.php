@@ -13,8 +13,9 @@
 		$u_id = $_POST['u_id'];
 		$p_id = $_POST['p_id'];
 		$sess_id = $_POST['sess_id'];
+		$image = $_POST['image'];
 
-		$cart->insertCart($title, $price, $amount, $u_id, $p_id, $sess_id);
+		$cart->insertCart($title, $price, $amount, $u_id, $p_id, $sess_id,$image);
 
 		header('Location:index.php');
 	

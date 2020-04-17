@@ -47,7 +47,7 @@
 		$id = $_POST['product_id'];
 	
 		$delete = $cart->deleteSingle($id);
-		header('Location:cart_view.php');
+		@ header('Location : cart_view.php');
 
 	}
 
@@ -104,7 +104,7 @@
  							
  							<input type="hidden" name="product_id" value="<?php echo $cart->id; ?>">
 
- 							<input type="submit" name="delete" value="DELETE" class="btn btn-danger ">
+ 							<input type="submit" name="delete" value="DELETE" class="btn btn-danger" onclick="refreshFunction()" id="delete">
 
  						</form>
 
@@ -154,10 +154,6 @@
  		
  	</div>
 
- 		
-
  	</div>
 
  	<?php require_once('layout/footer.php') ?>
-
- 

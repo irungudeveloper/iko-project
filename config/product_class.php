@@ -70,7 +70,7 @@
 		
 			$pdo = new Database;
 			$con = $pdo->connect();
-			$sql = "SELECT * FROM products";
+			$sql = "SELECT * FROM products ORDER BY id DESC";
 			$stmt = $con->prepare($sql);
 			$stmt->execute();
 			$products = $stmt->fetchAll();

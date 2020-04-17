@@ -67,7 +67,7 @@
  											echo "0";
  										}
 
- 										echo $product->totals;
+ 										echo $product->sales;
 
  								 	?>
  								 		

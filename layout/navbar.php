@@ -34,7 +34,7 @@
 <?php 
 
 	require_once('config/category_class.php');
-
+  
 	$category_object = new Category;
 	$category_data = $category_object->displayCategory();
 
